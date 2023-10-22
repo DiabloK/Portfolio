@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapes.com/css2?family=Poppins:wght@500$display=swap");
+:root {
+  --blue: #4e73df;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #e74a3b;
+  --orange: #fd7e14;
+  --yellow: #f6c23e;
+  --green: #1cc88a;
+  --teal: #20c9a6;
+  --cyan: #36b9cc;
+  --white: #fff;
+  --gray: #858796;
+  --gray-dark: #5a5c69;
+  --font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+
+  --dark-body: #161a1d;
+  --dark-main: #282e33;
+  --dark-second: #2c333a;
+  --dark-hover: #454f59;
+  --dark-text: #dee4ea;
+
+  --light-body: #f7f8f9;
+  --light-main: #f1f2f4;
+  --light-second: #dcdfe4;
+  --light-hover: #dcdfe4;
+  --light-text: #101214;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: Nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #858796;
+  text-align: left;
+  background-color: var(--light-body)
+}
+label {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+input {
+  position: absolute;
+  opacity: 0;
+}
+.sun {
+  position: absolute;
+  font-size: 1em;
+  color: var(--gray-dark);
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+  z-index: 0;
+  transform: scale(0);
+  transition: 1s;
+}
+.sun:hover {
+  color: var(--dark-second);
+}
+input:checked ~ .sun {
+  transform: scale(1) rotate(360deg);
+}
+.moon {
+  font-size: 1em;
+  color: var(--gray-dark);
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+  z-index: 0;
+  transition: 1s;
+}
+.moon:hover {
+  color: var(--light-second);
+}
+input:checked ~ .moon {
+  transform: rotate(360deg) scale(0);
+}
+.toggle {
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+    inset 0 8px 8px rgba(0, 0, 0, 0.1), inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+  transition: 1s;
+  z-index: -1;
+}
+input:checked ~ .toggle {
+  background: var(--light-body);
+}
